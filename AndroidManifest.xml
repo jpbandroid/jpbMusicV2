@@ -16,8 +16,7 @@
          Do not remove for as long as there are officially supported
          devices that were supported in 14.1
     -->
-    <!-- suppress AndroidElementNotAllowed -->
-    <original-package android:name="com.cyanogenmod.eleven" /> <!-- Used for caching and creating new playlists -->
+    <!-- suppress AndroidElementNotAllowed --> <!-- Used for caching and creating new playlists -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- Used to check for a network connection -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Used to keep the service running when the phone sleeps -->
@@ -87,7 +86,8 @@
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:taskAffinity=""
-            android:theme="@style/Theme.AudioPreview">
+            android:theme="@style/Theme.AudioPreview"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -159,12 +159,14 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_large_alternate" />
         </receiver> <!-- Media button receiver -->
-        <receiver android:name=".MediaButtonIntentReceiver">
+        <receiver android:name=".MediaButtonIntentReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver> <!-- Used to recalculate sorting of songs based on the user's locale -->
-        <receiver android:name=".locale.LocaleChangeReceiver">
+        <receiver android:name=".locale.LocaleChangeReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
             </intent-filter>

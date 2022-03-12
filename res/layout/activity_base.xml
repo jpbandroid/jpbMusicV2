@@ -77,7 +77,7 @@
 
             <include layout="@layout/bottom_action_bar" />
 
-            <fragment
+            <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/audioPlayerFragment"
                 class="org.lineageos.eleven.ui.fragments.AudioPlayerFragment"
                 android:layout_width="match_parent"
@@ -101,14 +101,15 @@
                     android:layout_height="@dimen/sliding_panel_indicator_height"
                     android:layout_gravity="center_horizontal"
                     android:scaleType="centerInside"
-                    android:src="@drawable/drag_indicator" />
+                    android:src="@drawable/drag_indicator"
+                    tools:ignore="ContentDescription" />
 
                 <include
                     android:id="@+id/secondHeaderBar"
                     layout="@layout/header_bar" />
             </LinearLayout>
 
-            <fragment
+            <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/queueFragment"
                 class="org.lineageos.eleven.ui.fragments.QueueFragment"
                 android:layout_width="match_parent"

@@ -288,8 +288,10 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         // Play and pause button
         mPlayPauseProgressButton = findViewById(R.id.playPauseProgressButtonAlt);
         mPlayPauseProgressButton.enableAndShow();
-        mPlayPauseButtonContainer = findViewById(R.id.playPauseProgressButton);
-        mPlayPauseButtonContainer.enableAndShow();
+        if (mPlayPauseButtonContainer != null) {
+            mPlayPauseButtonContainer = findViewById(R.id.playPauseProgressButton);
+            mPlayPauseButtonContainer.enableAndShow();
+        }
 
         // Track name
         mTrackName = findViewById(R.id.bottom_action_bar_line_one);
@@ -322,7 +324,9 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
      */
     private void updatePlaybackControls() {
         // Set the play and pause image
-        mPlayPauseButtonContainer.updateState();
+        if (mPlayPauseButtonContainer != null) {
+            mPlayPauseButtonContainer.updateState();
+        }
         mPlayPauseProgressButton.updateState();
     }
 
