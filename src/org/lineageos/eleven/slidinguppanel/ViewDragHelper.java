@@ -166,7 +166,7 @@ public class ViewDragHelper {
          *
          * <p>Calling code may decide to fling or otherwise release the view to let it
          * settle into place. It should do so using {@link #settleCapturedViewAt(int, int)}
-         * or {@link #flingCapturedView(int, int, int, int)}. If the Callback invokes
+         * or . If the Callback invokes
          * one of these methods, the ViewDragHelper will enter {@link #STATE_SETTLING}
          * and the view capture will not fully end until it comes to a complete stop.
          * If neither of these methods is invoked before <code>onViewReleased</code> returns,

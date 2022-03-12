@@ -27,7 +27,7 @@ import org.lineageos.eleven.provider.SongPlayCount.SongPlayCountColumns;
 import java.util.ArrayList;
 
 /**
- * Used to query {@link android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI} and return
+ * Used to query  and return
  * a sorted list of songs based on either the TopTracks or the RecentSongs
  */
 public class TopTracksLoader extends SongLoader {

@@ -449,7 +449,7 @@ public abstract class ImageWorker {
                 loadDefaultImage(imageView, imageType, null, key);
             }
 
-            if (executePotentialWork(key, imageView) && !mImageCache.isDiskCachePaused()) {
+            if (executePotentialWork(key, imageView) && mImageCache.isDiskCachePaused()) {
                 Drawable fromDrawable = imageView.getDrawable();
                 if (fromDrawable == null) {
                     fromDrawable = mTransparentDrawable;
@@ -508,7 +508,7 @@ public abstract class ImageWorker {
         // even though we may have found the image in the cache, we want to check if the playlist
         // has been updated, or it's been too long since the last update and change the image
         // accordingly
-        if (executePotentialWork(key, imageView) && !mImageCache.isDiskCachePaused()) {
+        if (executePotentialWork(key, imageView) && mImageCache.isDiskCachePaused()) {
             // since a playlist's image can change based on changes to the playlist
             // set the from drawable to be the existing image (if it exists) instead of transparent
             // and fade from there
@@ -546,7 +546,7 @@ public abstract class ImageWorker {
             return;
         }
 
-        if (executePotentialWork(key, albumScrimImage) && !mImageCache.isDiskCachePaused()) {
+        if (executePotentialWork(key, albumScrimImage) && mImageCache.isDiskCachePaused()) {
             // Otherwise run the worker task
             final BlurBitmapWorkerTask blurWorkerTask = new BlurBitmapWorkerTask(key,
                     albumScrimImage, ImageType.ALBUM, mTransparentDrawable, mContext);

@@ -367,19 +367,29 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
             if (baseActivity == null) {
                 return;
             }
-            if (MusicPlaybackService.META_CHANGED.equals(action)) {
-                baseActivity.onMetaChanged();
-            } else if (MusicPlaybackService.PLAYSTATE_CHANGED.equals(action)) {
-                baseActivity.mPlayPauseButtonContainer.updateState();
-                baseActivity.mPlayPauseProgressButton.updateState();
-            } else if (MusicPlaybackService.REFRESH.equals(action)) {
-                baseActivity.restartLoader();
-            } else if (MusicPlaybackService.PLAYLIST_CHANGED.equals(action)) {
-                baseActivity.onPlaylistChanged();
-            } else if (MusicPlaybackService.TRACK_ERROR.equals(action)) {
-                final String errorMsg = context.getString(R.string.error_playing_track,
-                        intent.getStringExtra(MusicPlaybackService.TrackErrorExtra.TRACK_NAME));
-                Toast.makeText(baseActivity, errorMsg, Toast.LENGTH_SHORT).show();
+            switch (action) {
+                case MusicPlaybackService.META_CHANGED:
+                    baseActivity.onMetaChanged();
+                    break;
+                case MusicPlaybackService.PLAYSTATE_CHANGED:
+                    if (baseActivity.mPlayPauseButtonContainer != null) {
+                        baseActivity.mPlayPauseButtonContainer.updateState();
+                    }
+                    if (baseActivity.mPlayPauseProgressButton != null) {
+                        baseActivity.mPlayPauseProgressButton.updateState();
+                    }
+                    break;
+                case MusicPlaybackService.REFRESH:
+                    baseActivity.restartLoader();
+                    break;
+                case MusicPlaybackService.PLAYLIST_CHANGED:
+                    baseActivity.onPlaylistChanged();
+                    break;
+                case MusicPlaybackService.TRACK_ERROR:
+                    final String errorMsg = context.getString(R.string.error_playing_track,
+                            intent.getStringExtra(MusicPlaybackService.TrackErrorExtra.TRACK_NAME));
+                    Toast.makeText(baseActivity, errorMsg, Toast.LENGTH_SHORT).show();
+                    break;
             }
         }
     }

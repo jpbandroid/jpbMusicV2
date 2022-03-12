@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Used to query {@link MediaStore.Audio.Artists.EXTERNAL_CONTENT_URI} and
+ * Used to query  and
  * return the artists on a user's device.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)

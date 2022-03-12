@@ -17,6 +17,7 @@
  */
 package org.lineageos.eleven.cache;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ComponentCallbacks2;
@@ -91,12 +92,12 @@ public final class ImageCache {
     /**
      * LRU cache
      */
-    private MemoryCache mLruCache;
+    private static MemoryCache mLruCache;
 
     /**
      * Disk LRU cache
      */
-    private DiskLruCache mDiskCache;
+    private static DiskLruCache mDiskCache;
 
     /**
      * listeners to the cache state
@@ -142,7 +143,7 @@ public final class ImageCache {
      *
      * @param context     The {@link Context} to use
      */
-    private void init(final Context context) {
+    private static void init(final Context context) {
         ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
 
             @Override
@@ -164,7 +165,7 @@ public final class ImageCache {
      *
      * @param context The {@link Context} to use
      */
-    private synchronized void initDiskCache(final Context context) {
+    private static synchronized void initDiskCache(final Context context) {
         // Set up disk cache
         if (mDiskCache == null || mDiskCache.isClosed()) {
             File diskCacheDir = getDiskCacheDir(context, TAG);
@@ -186,7 +187,7 @@ public final class ImageCache {
      *
      * @param context The {@link Context} to use
      */
-    public void initLruCache(final Context context) {
+    public static void initLruCache(final Context context) {
         final ActivityManager activityManager = context.getSystemService(ActivityManager.class);
         final int lruCacheSize = Math.round(MEM_CACHE_DIVIDER * activityManager.getMemoryClass()
                 * 1024 * 1024);
@@ -481,7 +482,7 @@ public final class ImageCache {
      * flush() is called to synchronize up other methods that are accessing the
      * cache first
      */
-    public void flush() {
+    public static void flush() {
         ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
 
             @Override
@@ -503,7 +504,7 @@ public final class ImageCache {
     /**
      * Clears the disk and memory caches
      */
-    public void clearCaches() {
+    public static void clearCaches() {
         ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
 
             @Override
@@ -529,7 +530,7 @@ public final class ImageCache {
      * this includes disk access so this should not be executed on the main/UI
      * thread.
      */
-    public void close() {
+    public static void close() {
         ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
 
             @Override
@@ -553,7 +554,7 @@ public final class ImageCache {
      * Evicts all of the items from the memory cache and lets the system know
      * now would be a good time to garbage collect
      */
-    public void evictAll() {
+    public static void evictAll() {
         if (mLruCache != null) {
             mLruCache.evictAll();
         }
@@ -622,7 +623,7 @@ public final class ImageCache {
      * @return True if the user is scrolling, false otherwise.
      */
     public boolean isDiskCachePaused() {
-        return mPauseDiskAccess;
+        return !mPauseDiskAccess;
     }
 
     public void addCacheListener(ICacheListener listener) {
@@ -665,6 +666,7 @@ public final class ImageCache {
      * @param path The path to check
      * @return The space available in bytes
      */
+    @SuppressLint("UsableSpace")
     public static long getUsableSpace(final File path) {
         return path.getUsableSpace();
     }

@@ -270,6 +270,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
      * This looks up the album and artist details for a track
      */
     private static class AlbumArtistLoader extends AsyncTask<Long, Void, AlbumArtistDetails> {
+        @SuppressLint("StaticFieldLeak")
         private Context mContext;
         private AlbumArtFragment mFragment;
 

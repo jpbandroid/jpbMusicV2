@@ -16,6 +16,7 @@
  */
 package org.lineageos.eleven.cache;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -48,6 +49,7 @@ public abstract class BitmapWorkerTask<Params, Progress, Result>
      */
     protected Drawable mFromDrawable;
 
+    @SuppressLint("StaticFieldLeak")
     protected final Context mContext;
 
     protected final ImageCache mImageCache;
