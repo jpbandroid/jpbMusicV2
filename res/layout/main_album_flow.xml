@@ -15,14 +15,14 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<org.lineageos.eleven.widgets.SquareFrame
+<com.jpb.eleven.widgets.SquareFrame
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:background="@drawable/default_artwork">
 
-    <org.lineageos.eleven.widgets.SquareViewPager
+    <com.jpb.eleven.widgets.SquareViewPager
         android:id="@+id/audio_player_album_art_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -31,7 +31,7 @@
         layout="@layout/loading_empty_container"
         tools:visibility="gone" />
 
-    <org.lineageos.eleven.widgets.VisualizerView
+    <com.jpb.eleven.widgets.VisualizerView
         android:id="@+id/visualizerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,4 +55,4 @@
         android:paddingTop="6dp"
         android:textColor="@color/audio_player_lyrics_text_color"
         android:textSize="@dimen/text_size_small" />
-</org.lineageos.eleven.widgets.SquareFrame>
+</com.jpb.eleven.widgets.SquareFrame>

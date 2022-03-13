@@ -71,7 +71,7 @@
             android:contentDescription="@null"
             android:visibility="gone" />
 
-        <org.lineageos.eleven.widgets.PopupMenuButton
+        <com.jpb.eleven.widgets.PopupMenuButton
             android:id="@+id/popup_menu_button"
             android:layout_width="@dimen/overflow_width"
             android:layout_height="@dimen/overflow_height"

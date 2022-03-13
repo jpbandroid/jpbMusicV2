@@ -15,14 +15,14 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<org.lineageos.eleven.widgets.SquareView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.jpb.eleven.widgets.SquareView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <org.lineageos.eleven.widgets.SquareImageView
+    <com.jpb.eleven.widgets.SquareImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
 
-</org.lineageos.eleven.widgets.SquareView>
+</com.jpb.eleven.widgets.SquareView>

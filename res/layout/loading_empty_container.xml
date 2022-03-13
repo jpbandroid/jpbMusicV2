@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 
-<org.lineageos.eleven.widgets.LoadingEmptyContainer
+<com.jpb.eleven.widgets.LoadingEmptyContainer
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/loading_empty_container"
@@ -33,4 +33,4 @@
         tools:visibility="gone" />
 
     <include layout="@layout/no_results_message" />
-</org.lineageos.eleven.widgets.LoadingEmptyContainer>
+</com.jpb.eleven.widgets.LoadingEmptyContainer>

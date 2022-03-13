@@ -70,7 +70,7 @@
         app:layout_constraintTop_toTopOf="@+id/audio_player_seeker"
         tools:text="12:53" />
 
-    <org.lineageos.eleven.widgets.ShuffleButton
+    <com.jpb.eleven.widgets.ShuffleButton
         android:id="@+id/action_button_shuffle"
         android:layout_width="@dimen/audio_player_controls_end_button_width"
         android:layout_height="@dimen/audio_player_controls_end_button_height"
@@ -83,7 +83,7 @@
         app:layout_constraintEnd_toStartOf="@+id/action_button_previous"
         app:layout_constraintTop_toTopOf="@+id/action_button_previous" />
 
-    <org.lineageos.eleven.widgets.RepeatingImageButton
+    <com.jpb.eleven.widgets.RepeatingImageButton
         android:id="@+id/action_button_previous"
         android:layout_width="@dimen/audio_player_controls_end_button_width"
         android:layout_height="@dimen/audio_player_controls_end_button_height"
@@ -107,7 +107,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/audio_player_seeker" />
 
-    <org.lineageos.eleven.widgets.RepeatingImageButton
+    <com.jpb.eleven.widgets.RepeatingImageButton
         android:id="@+id/action_button_next"
         android:layout_width="@dimen/audio_player_controls_end_button_width"
         android:layout_height="@dimen/audio_player_controls_end_button_height"
@@ -119,7 +119,7 @@
         app:layout_constraintStart_toEndOf="@+id/playPauseProgressButton"
         app:layout_constraintTop_toTopOf="@+id/playPauseProgressButton" />
 
-    <org.lineageos.eleven.widgets.RepeatButton
+    <com.jpb.eleven.widgets.RepeatButton
         android:id="@+id/action_button_repeat"
         android:layout_width="@dimen/audio_player_controls_end_button_width"
         android:layout_height="@dimen/audio_player_controls_end_button_height"

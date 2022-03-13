@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 
-<org.lineageos.eleven.widgets.NoResultsContainer
+<com.jpb.eleven.widgets.NoResultsContainer
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/no_results_container"
@@ -80,4 +80,4 @@
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="@dimen/no_results_text_secondary"
         android:text="@string/empty_generic_secondary" />
-</org.lineageos.eleven.widgets.NoResultsContainer>
+</com.jpb.eleven.widgets.NoResultsContainer>

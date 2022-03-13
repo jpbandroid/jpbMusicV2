@@ -14,7 +14,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<org.lineageos.eleven.widgets.AlbumScrimImage
+<com.jpb.eleven.widgets.AlbumScrimImage
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/albumScrimImage"
     android:layout_width="match_parent"
@@ -30,4 +30,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"/>
-</org.lineageos.eleven.widgets.AlbumScrimImage>
+</com.jpb.eleven.widgets.AlbumScrimImage>

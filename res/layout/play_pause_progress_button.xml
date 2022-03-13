@@ -14,7 +14,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<org.lineageos.eleven.widgets.PlayPauseButtonContainer
+<com.jpb.eleven.widgets.PlayPauseButtonContainer
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/playPauseProgressButton"
@@ -23,7 +23,7 @@
     android:visibility="gone"
     tools:visibility="visible">
 
-    <org.lineageos.eleven.widgets.PlayPauseButton
+    <com.jpb.eleven.widgets.PlayPauseButton
         android:id="@+id/action_button_play"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,4 +44,4 @@
         android:progress="100"
         android:progressDrawable="@drawable/circular_drawable" />
 
-</org.lineageos.eleven.widgets.PlayPauseButtonContainer>
+</com.jpb.eleven.widgets.PlayPauseButtonContainer>

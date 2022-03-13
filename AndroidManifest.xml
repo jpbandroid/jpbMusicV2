@@ -31,7 +31,7 @@
     <uses-feature android:name="android.hardware.sensor.accelerometer" />
 
     <application
-        android:name=".ElevenApplication"
+        android:name="com.jpb.eleven.ElevenApplication"
         android:allowTaskReparenting="true"
         android:appCategory="audio"
         android:hardwareAccelerated="@bool/config_hardwareAccelerated"
@@ -47,7 +47,7 @@
             android:resource="@xml/decelerate_cubic" />
         <!-- Main activity -->
         <activity
-            android:name=".ui.activities.HomeActivity"
+            android:name="com.jpb.eleven.ui.activities.HomeActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/Eleven.Theme.ActionBar.Overlay"
@@ -76,11 +76,11 @@
             </intent-filter>
         </activity> <!-- Used to set options -->
         <activity
-            android:name=".ui.activities.SettingsActivity"
+            android:name="com.jpb.eleven.ui.activities.SettingsActivity"
             android:label="@string/menu_settings"
             android:theme="@style/Eleven.Theme.ActionBar.Overlay" /> <!-- Audio Preview -->
         <activity
-            android:name=".ui.activities.preview.AudioPreviewActivity"
+            android:name="com.jpb.eleven.ui.activities.preview.AudioPreviewActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:taskAffinity=""
@@ -122,7 +122,7 @@
             </intent-filter>
         </activity> <!-- 4x1 App Widget -->
         <receiver
-            android:name=".appwidgets.AppWidgetSmall"
+            android:name="com.jpb.eleven.appwidgets.AppWidgetSmall"
             android:exported="false"
             android:label="@string/app_widget_small">
             <intent-filter>
@@ -134,7 +134,7 @@
                 android:resource="@xml/app_widget_small" />
         </receiver> <!-- 4x2  App Widget -->
         <receiver
-            android:name=".appwidgets.AppWidgetLarge"
+            android:name="com.jpb.eleven.appwidgets.AppWidgetLarge"
             android:exported="false"
             android:label="@string/app_widget_large">
             <intent-filter>
@@ -146,7 +146,7 @@
                 android:resource="@xml/app_widget_large" />
         </receiver> <!-- 4x2 alternate App Widget -->
         <receiver
-            android:name=".appwidgets.AppWidgetLargeAlternate"
+            android:name="com.jpb.eleven.appwidgets.AppWidgetLargeAlternate"
             android:exported="false"
             android:label="@string/app_widget_large_alt">
             <intent-filter>
@@ -157,20 +157,20 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_large_alternate" />
         </receiver> <!-- Media button receiver -->
-        <receiver android:name=".MediaButtonIntentReceiver"
+        <receiver android:name="com.jpb.eleven.MediaButtonIntentReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver> <!-- Used to recalculate sorting of songs based on the user's locale -->
-        <receiver android:name=".locale.LocaleChangeReceiver"
+        <receiver android:name="com.jpb.eleven.locale.LocaleChangeReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
             </intent-filter>
         </receiver> <!-- Music service -->
         <service
-            android:name=".MusicPlaybackService"
+            android:name="com.jpb.eleven.MusicPlaybackService"
             android:label="@string/app_name"
             android:process=":main" />
     </application>

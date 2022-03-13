@@ -17,7 +17,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
  -->
-<org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout
+<com.jpb.eleven.slidinguppanel.SlidingUpPanelLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -52,7 +52,7 @@
 
     </FrameLayout>
 
-    <org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout
+    <com.jpb.eleven.slidinguppanel.SlidingUpPanelLayout
         android:id="@+id/sliding_layout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -79,7 +79,7 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/audioPlayerFragment"
-                class="org.lineageos.eleven.ui.fragments.AudioPlayerFragment"
+                class="com.jpb.eleven.ui.fragments.AudioPlayerFragment"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
@@ -111,10 +111,10 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/queueFragment"
-                class="org.lineageos.eleven.ui.fragments.QueueFragment"
+                class="com.jpb.eleven.ui.fragments.QueueFragment"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
         </LinearLayout>
-    </org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout>
-</org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout>
+    </com.jpb.eleven.slidinguppanel.SlidingUpPanelLayout>
+</com.jpb.eleven.slidinguppanel.SlidingUpPanelLayout>

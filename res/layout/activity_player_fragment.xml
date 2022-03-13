@@ -45,7 +45,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <org.lineageos.eleven.widgets.MainPlaybackControls
+        <com.jpb.eleven.widgets.MainPlaybackControls
             android:id="@+id/main_playback_controls"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

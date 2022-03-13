@@ -18,7 +18,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <org.lineageos.eleven.widgets.SquareImageView
+    <com.jpb.eleven.widgets.SquareImageView
         android:id="@+id/audio_player_album_art"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
