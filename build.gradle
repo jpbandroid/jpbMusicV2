@@ -184,6 +184,9 @@ dependencies {
 
     // Third-party libs
 
+    implementation "com.google.accompanist:accompanist-insets-ui:0.23.1"
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.23.1"
+
     // see https://github.com/javiersantos/AppUpdater/releases
     implementation "com.github.javiersantos:AppUpdater:2.7"
 
