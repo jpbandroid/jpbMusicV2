@@ -73,46 +73,6 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
 
     @Override
     public List<Album> loadInBackground() {
-        // Create the Cursor
-        Cursor cursor = makeAlbumCursor(getContext(), mArtistId);
-        // Gather the data
-        if (cursor != null && cursor.moveToFirst()) {
-            do {
-                // Copy the album id
-                final long id = cursor.getLong(0);
-
-                // Copy the album name
-                final String albumName = cursor.getString(1);
-
-                // Copy the artist name
-                final String artist = cursor.getString(2);
-
-                // Copy the number of songs
-                final int songCount = cursor.getInt(3);
-
-                // Copy the release year
-                final String year = cursor.getString(4);
-
-                // as per designer's request, don't show unknown albums
-                if (MediaStore.UNKNOWN_STRING.equals(albumName)) {
-                    continue;
-                }
-
-                // Create a new album
-                final Album album = new Album(id, albumName, artist, songCount, year);
-
-                if (cursor instanceof SortedCursor) {
-                    album.mBucketLabel = (String) ((SortedCursor) cursor).getExtraData();
-                }
-
-                // Add everything up
-                mAlbumsList.add(album);
-            } while (cursor.moveToNext());
-        }
-        // Close the cursor
-        if (cursor != null) {
-            cursor.close();
-        }
 
         return mAlbumsList;
     }

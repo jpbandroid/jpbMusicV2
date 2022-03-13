@@ -22,11 +22,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Used to keep the service running when the phone sleeps -->
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- The main service uses a sticky broadcast -->
     <uses-permission android:name="android.permission.BROADCAST_STICKY" /> <!-- Lower or raise the music based on the phone state -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- Used to set the devices's ringtone -->
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" /> <!-- Used to create launcher shortcuts -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- Used to create launcher shortcuts -->
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> <!-- Allows Eleven to read from External Storage -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Allows Eleven to modify media files on external storage -->
-    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/> <!-- Audio Visualizer Permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Audio Visualizer Permissions -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- Allows Eleven to start services in foreground -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Accelerometer feature for shake to play -->
