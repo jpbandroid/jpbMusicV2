@@ -9,16 +9,15 @@
     <uses-sdk
         android:minSdkVersion="28"
         android:targetSdkVersion="30" />
-
     <!--
      Android Studio will complain about not being able to
          resove the symbol, but it compiles with no problem.
          Do not remove for as long as there are officially supported
          devices that were supported in 14.1
     -->
-    <!-- suppress AndroidElementNotAllowed --> <!-- Used for caching and creating new playlists -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- Used to check for a network connection -->
+    <!-- suppress AndroidElementNotAllowed -->
+    <!-- Used for caching and creating new playlists -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Used to check for a network connection -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Used to keep the service running when the phone sleeps -->
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- The main service uses a sticky broadcast -->
     <uses-permission android:name="android.permission.BROADCAST_STICKY" /> <!-- Lower or raise the music based on the phone state -->
@@ -42,10 +41,15 @@
         android:taskAffinity="org.lineageos.eleven.task"
         android:theme="@style/Eleven.Theme"
         tools:ignore="AllowBackup">
+        <activity
+            android:name="com.jpb.eleven.oss.licenses.OSSLicense"
+            android:exported="false"
+            android:label="@string/title_activity_osslicense"
+            android:theme="@style/Eleven.Theme" />
+
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/decelerate_cubic" />
-        <!-- Main activity -->
+            android:resource="@xml/decelerate_cubic" /> <!-- Main activity -->
         <activity
             android:name="com.jpb.eleven.ui.activities.HomeActivity"
             android:exported="true"
@@ -82,10 +86,10 @@
         <activity
             android:name="com.jpb.eleven.ui.activities.preview.AudioPreviewActivity"
             android:excludeFromRecents="true"
+            android:exported="true"
             android:launchMode="singleTask"
             android:taskAffinity=""
-            android:theme="@style/Theme.AudioPreview"
-            android:exported="true">
+            android:theme="@style/Theme.AudioPreview">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -157,13 +161,15 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_large_alternate" />
         </receiver> <!-- Media button receiver -->
-        <receiver android:name="com.jpb.eleven.MediaButtonIntentReceiver"
+        <receiver
+            android:name="com.jpb.eleven.MediaButtonIntentReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver> <!-- Used to recalculate sorting of songs based on the user's locale -->
-        <receiver android:name="com.jpb.eleven.locale.LocaleChangeReceiver"
+        <receiver
+            android:name="com.jpb.eleven.locale.LocaleChangeReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
