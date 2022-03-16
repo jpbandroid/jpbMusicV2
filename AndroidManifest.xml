@@ -42,6 +42,9 @@
         android:theme="@style/Eleven.Theme"
         tools:ignore="AllowBackup">
         <activity
+            android:name="com.jpb.eleven.about.AboutActivity"
+            android:exported="false" />
+        <activity
             android:name="com.jpb.eleven.oss.licenses.OSSLicense"
             android:exported="false"
             android:label="@string/title_activity_osslicense"
