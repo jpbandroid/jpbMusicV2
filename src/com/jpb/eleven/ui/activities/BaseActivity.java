@@ -181,6 +181,11 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
             NavUtils.openSettings(this);
             return true;
         }
+        if (item.getItemId() == R.id.menu_about) {
+            Intent intent = new Intent(this, com.jpb.eleven.about.AboutActivity.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

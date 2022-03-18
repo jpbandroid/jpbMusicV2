@@ -1,11 +1,15 @@
 package com.jpb.eleven.about
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.view.Menu
+import android.view.MenuItem
 import org.lineageos.eleven.R
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.NonNull
 import com.drakeet.about.*
+import com.jpb.eleven.oss.licenses.OSSLicense
 import org.lineageos.eleven.BuildConfig
 
 
@@ -19,6 +23,8 @@ class AboutActivity : AbsAboutActivity() {
         icon.setImageResource(R.mipmap.ic_launcher)
         slogan.text = "jpb Music v2 (Eleven)"
         version.text = BuildConfig.VERSION_NAME
+        setHeaderBackground(R.color.accent)
+        setHeaderContentScrim(R.color.accent)
     }
 
     override fun onItemsCreated(@NonNull items: MutableList<Any>) {
@@ -34,5 +40,20 @@ class AboutActivity : AbsAboutActivity() {
             )
         )
         items.add(Contributor(R.drawable.lineage, "The LineageOS Project", "Original app's developers", "https://lineageos.org/"))
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val menuInflater = menuInflater
+        menuInflater.inflate(R.menu.menu_about, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        super.onOptionsItemSelected(item)
+        if (item.itemId == R.id.osslicense) {
+            val intent = Intent(applicationContext, OSSLicense::class.java)
+            startActivity(intent)
+            return true
+        }
+        return false
     }
 }
