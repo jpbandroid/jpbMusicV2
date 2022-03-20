@@ -8,6 +8,7 @@ import org.lineageos.eleven.R
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.NonNull
+import androidx.core.content.ContextCompat
 import com.drakeet.about.*
 import com.jpb.eleven.oss.licenses.OSSLicense
 import org.lineageos.eleven.BuildConfig
@@ -23,13 +24,14 @@ class AboutActivity : AbsAboutActivity() {
         icon.setImageResource(R.mipmap.ic_launcher)
         slogan.text = "jpb Music v2 (Eleven)"
         version.text = BuildConfig.VERSION_NAME
+        getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.accent));
         setHeaderBackground(R.color.accent)
         setHeaderContentScrim(R.color.accent)
     }
 
     override fun onItemsCreated(@NonNull items: MutableList<Any>) {
         items.add(Category("About app"))
-        items.add(Card("jpb Music\nFOSS music player for Android based on LineageOS' Eleven music player"))
+        items.add(Card("jpb Music\nFOSS music player for Android based on LineageOS' Eleven music player\nEleven source: https://github.com/LineageOS/android_packages_apps_Eleven/tree/lineage-18.1"))
         items.add(Category("Developers"))
         items.add(
             Contributor(
