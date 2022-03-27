@@ -92,11 +92,6 @@ android {
         }
     }
 
-    dexOptions {
-        dexInProcess true
-        preDexLibraries true
-    }
-
     lintOptions {
         baseline file("lint-baseline.xml")
 
