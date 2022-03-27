@@ -105,6 +105,7 @@ public class PlaylistDetailFragment extends DetailFragment implements
         super.onViewCreated();
         setupHero();
         setupSongList();
+        LoaderManager.getInstance(this).initLoader(0, getArguments(), this);
     }
 
     private void lookupName() {
