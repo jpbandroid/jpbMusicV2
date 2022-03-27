@@ -23,6 +23,7 @@ import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -39,6 +40,8 @@ import org.lineageos.eleven.R;
 import com.jpb.eleven.cache.ImageFetcher;
 import com.jpb.eleven.utils.MusicUtils;
 import com.jpb.eleven.utils.PreferenceUtils;
+
+import java.util.Objects;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -76,6 +79,10 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            // Since we use RenderEffect, we need to make sure we run >= Android S
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+                getPreferenceScreen().removePreference(Objects.requireNonNull(findPreference(PreferenceUtils.USE_BLUR)));
+            }
 
             final Preference deleteCache = findPreference("delete_cache");
             if (deleteCache != null) {

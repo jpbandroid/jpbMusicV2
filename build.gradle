@@ -58,8 +58,6 @@ android {
         versionCode 401
         versionName '4.0.1'
 
-        renderscriptTargetApi 19
-        renderscriptSupportModeEnabled true
         vectorDrawables {
             useSupportLibrary true
         }

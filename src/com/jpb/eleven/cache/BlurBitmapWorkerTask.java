@@ -27,7 +27,6 @@ import android.renderscript.ScriptIntrinsicBlur;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.jpb.eleven.cache.ImageWorker.ImageType;
 import com.jpb.eleven.widgets.AlbumScrimImage;
 
 import java.lang.ref.WeakReference;
@@ -55,9 +54,6 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
         public int mPaletteColor;
     }
 
-    /**
-     * The {@link com.jpb.eleven.widgets.AlbumScrimImage} used to set the result
-     */
     private final WeakReference<AlbumScrimImage> mBlurScrimImage;
 
     /**
@@ -74,7 +70,7 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
      * @param fromDrawable    what drawable to transition from
      */
     public BlurBitmapWorkerTask(final String key, final AlbumScrimImage albumScrimImage,
-                                final ImageType imageType, final Drawable fromDrawable,
+                                final ImageWorker.ImageType imageType, final Drawable fromDrawable,
                                 final Context context) {
         super(key, albumScrimImage.getImageView(), imageType, fromDrawable, context);
         mBlurScrimImage = new WeakReference<>(albumScrimImage);
@@ -116,7 +112,8 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
                 output = input;
             } else {
                 // if we aren't creating a new bitmap, create a new output bitmap
-                output = Bitmap.createBitmap(input.getWidth(), input.getHeight(), input.getConfig());
+                output = Bitmap.createBitmap(input.getWidth(), input.getHeight(),
+                        input.getConfig());
             }
 
             // run the blur multiple times
