@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.preference.PreferenceManager;
 
 import com.jpb.eleven.ui.fragments.AlbumFragment;
@@ -235,7 +236,8 @@ public final class PreferenceUtils {
     }
 
     public boolean getUseBlur() {
-        return mPreferences.getBoolean(USE_BLUR, false);
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+                mPreferences.getBoolean(USE_BLUR, false);
     }
 
     public boolean getShakeToPlay() {

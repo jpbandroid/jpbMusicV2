@@ -123,7 +123,6 @@ android {
             aidl.srcDirs = ['src']
             assets.srcDirs = ['assets']
             java.srcDirs = ['src']
-            renderscript.srcDirs = ['src']
             res.srcDirs = ['res']
             resources.srcDirs = ['res']
         }

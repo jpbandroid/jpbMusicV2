@@ -29,9 +29,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import org.lineageos.eleven.R;
+
 import androidx.core.content.ContextCompat;
 
-import org.lineageos.eleven.R;
 import com.jpb.eleven.cache.ImageWorker;
 import com.jpb.eleven.utils.ImageUtils;
 
