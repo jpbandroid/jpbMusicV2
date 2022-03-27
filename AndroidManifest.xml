@@ -8,10 +8,10 @@
 
     <uses-sdk
         android:minSdkVersion="28"
-        android:targetSdkVersion="30" />
+        android:targetSdkVersion="32" />
     <!--
      Android Studio will complain about not being able to
-         resove the symbol, but it compiles with no problem.
+         resolve the symbol, but it compiles with no problem.
          Do not remove for as long as there are officially supported
          devices that were supported in 14.1
     -->
