@@ -16,7 +16,8 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory android:title="@string/settings_general_category" >
 
@@ -61,7 +62,7 @@
         <Preference
             android:icon="@mipmap/ic_launcher"
             android:key="aboutver"
-            android:summary="version 4.0.1\nBuilt 20 March 2022"
+            android:summary="version 4.0.1\nBuilt 27 March 2022"
             android:title="jpb Music (Eleven)" />
     </PreferenceCategory>
 </PreferenceScreen>

@@ -18,37 +18,29 @@
 package com.jpb.eleven;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.StrictMode;
 
 import org.lineageos.eleven.BuildConfig;
 import com.jpb.eleven.cache.ImageCache;
 
 public class ElevenApplication extends Application {
+    private static Context appContext;
     @Override
     public void onCreate() {
         super.onCreate();
-
-        if (BuildConfig.DEBUG) {
-            enableStrictMode();
-        }
+        appContext = getApplicationContext();
     }
 
     @Override
     public void onLowMemory() {
-        ImageCache.getInstance(this).evictAll();
+        ImageCache.getInstance(this);
+        ImageCache.evictAll();
         super.onLowMemory();
     }
 
-    private void enableStrictMode() {
-        final StrictMode.ThreadPolicy.Builder threadPolicyBuilder = new StrictMode.ThreadPolicy.Builder()
-                .detectAll()
-                .penaltyLog()
-                .penaltyFlashScreen();
-        final StrictMode.VmPolicy.Builder vmPolicyBuilder = new StrictMode.VmPolicy.Builder()
-                .detectAll()
-                .penaltyLog();
 
-        StrictMode.setThreadPolicy(threadPolicyBuilder.build());
-        StrictMode.setVmPolicy(vmPolicyBuilder.build());
+    public static Context getAppContext() {
+        return appContext;
     }
 }
