@@ -31,7 +31,7 @@ class AboutActivity : AbsAboutActivity() {
 
     override fun onItemsCreated(@NonNull items: MutableList<Any>) {
         items.add(Category("About app"))
-        items.add(Card("jpb Music\nFOSS music player for Android based on LineageOS' Eleven music player\nEleven source: https://github.com/LineageOS/android_packages_apps_Eleven/tree/lineage-18.1"))
+        items.add(Card("jpb Music\nFOSS music player for Android based on LineageOS' Eleven music player\nEleven source: https://github.com/LineageOS/android_packages_apps_Eleven/tree/lineage-19.1"))
         items.add(Category("Developers"))
         items.add(
             Contributor(
