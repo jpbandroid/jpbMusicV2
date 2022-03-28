@@ -24,7 +24,7 @@ class AboutActivity : AbsAboutActivity() {
         icon.setImageResource(R.mipmap.ic_launcher)
         slogan.text = "jpb Music v2 (Eleven)"
         version.text = BuildConfig.VERSION_NAME
-        getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.accent));
+        window.statusBarColor = ContextCompat.getColor(getApplicationContext(), R.color.accent);
         setHeaderBackground(R.color.accent)
         setHeaderContentScrim(R.color.accent)
     }
