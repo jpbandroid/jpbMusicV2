@@ -51,5 +51,12 @@
         <item name="android:windowAllowReturnTransitionOverlap">false</item>
     </style>
 
+    <style name="Theme.Renge" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/renge</item>
+        <item name="colorPrimaryVariant">@color/renge</item>
+        <item name="colorSecondary">@color/renge</item>
+        <item name="colorSecondaryVariant">@color/renge</item>
+    </style>
+
     <style name="ToolBarPopupTheme" parent="@style/Theme.AppCompat" />
 </resources>

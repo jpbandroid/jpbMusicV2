@@ -37,7 +37,7 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
     </style>
-    <style name="Theme.MD3" parent="@style/Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.MD3" parent="@style/ThemeOverlay.Material3">
         <item name="android:windowContentOverlay">@null</item>
         <item name="popupMenuStyle">@style/PopupMenu</item>
         <item name="dropDownListViewStyle">@style/DropDownListView</item>
@@ -55,6 +55,13 @@
         <item name="android:navigationBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
+    </style>
+
+    <style name="Theme.Renge" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/renge</item>
+        <item name="colorPrimaryVariant">@color/renge</item>
+        <item name="colorSecondary">@color/renge</item>
+        <item name="colorSecondaryVariant">@color/renge</item>
     </style>
 
     <style name="ActionBarWidgetTheme" parent="@style/Theme.AppCompat.DayNight">

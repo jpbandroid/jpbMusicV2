@@ -19,6 +19,8 @@
     <color name="primary">#212121</color>
     <color name="primary_dark">#121212</color>
     <color name="accent">#1ddbc5</color>
+    <color name="renge">#FFBB5E61</color>
+
 
     <!-- Standard Text Color -->
     <color name="default_text_color">@color/white</color>

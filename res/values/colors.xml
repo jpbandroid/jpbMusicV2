@@ -42,6 +42,7 @@
     <color name="brown_dark">#5D4037</color>
     <color name="teal_dark">#00796B</color>
     <color name="blue_dark">#303F9F</color>
+    <color name="renge">#FFAB373A</color>
 
     <!-- Standard Text Color -->
     <color name="default_text_color">@color/black</color>
