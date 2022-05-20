@@ -19,20 +19,19 @@
 package com.jpb.eleven
 
 import android.app.Application
-import com.jpb.eleven.ElevenApplication
-import com.jpb.eleven.cache.ImageCache
 import android.content.Context
+import android.content.SharedPreferences
+import androidx.preference.PreferenceManager
 import com.google.android.material.color.DynamicColors
+import com.jpb.eleven.ThemeHelper.applyTheme
+import com.jpb.eleven.cache.ImageCache
 import rikka.material.app.DayNightDelegate
 import rikka.material.app.LocaleDelegate
+
 
 class ElevenApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        appContext = applicationContext
-        LocaleDelegate.defaultLocale = GlobalValues.locale
-        DayNightDelegate.setApplicationContext(this)
-        DayNightDelegate.setDefaultNightMode(AppUtils.getNightMode(GlobalValues.darkMode))
         if (GlobalValues.md3Theme) {
             DynamicColors.applyToActivitiesIfAvailable(this)
         }

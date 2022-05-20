@@ -49,10 +49,10 @@
         <item>@string/array_dark_mode_system</item>
     </string-array>
 
-    <string-array name="list_dark_mode_value" tools:ignore="InconsistentArrays">
-        <item>off</item>
-        <item>on</item>
-        <item>system</item>
+    <string-array name="themeEntryArray">
+        <item>light</item>
+        <item>dark</item>
+        <item>default</item>
     </string-array>
 
 </resources>

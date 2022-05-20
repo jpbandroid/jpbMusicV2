@@ -2,6 +2,7 @@
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
  * Copyright (C) 2019-2021 The LineageOS Project
+ * Copyright (C) 2022 jpb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +55,7 @@ import android.content.Context
 import android.content.res.Resources
 import android.util.TypedValue
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.jpb.eleven.GlobalValues
 import com.jpb.eleven.utils.NavUtils
@@ -68,7 +70,7 @@ import java.lang.UnsupportedOperationException
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-abstract class BaseActivity : MaterialActivity(), ServiceConnection, MusicStateListener,
+abstract class BaseActivity : AppCompatActivity(), ServiceConnection, MusicStateListener,
     ICacheListener {
     /**
      * Play-state and meta change listener
@@ -114,8 +116,12 @@ abstract class BaseActivity : MaterialActivity(), ServiceConnection, MusicStateL
      * to initialize the app.
      */
 
-    override fun computeUserThemeKey(): String {
+    fun computeUserThemeKey(): String {
         return GlobalValues.darkMode + GlobalValues.rengeTheme + GlobalValues.md3Theme
+    }
+
+    private val localeDelegate by lazy {
+        LocaleDelegate()
     }
     
     protected open fun init(savedInstanceState: Bundle?) {
@@ -431,7 +437,7 @@ abstract class BaseActivity : MaterialActivity(), ServiceConnection, MusicStateL
         ElevenUtils.getImageFetcher(this).loadCurrentArtwork(mAlbumArt)
     }
 
-    override fun onApplyUserThemeResource(theme: Resources.Theme, isDecorView: Boolean) {
+    fun onApplyUserThemeResource(theme: Resources.Theme, isDecorView: Boolean) {
         theme.applyStyle(R.style.ThemeOverlay, true)
 
         if (GlobalValues.md3Theme) {

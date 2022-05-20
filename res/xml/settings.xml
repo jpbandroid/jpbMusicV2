@@ -73,7 +73,7 @@
         <ListPreference
             app:defaultValue="system"
             app:entries="@array/list_dark_mode"
-            app:entryValues="@array/list_dark_mode_value"
+            app:entryValues="@array/themeEntryArray"
             app:key="darkMode"
             app:summary="%s"
             app:title="Dark Mode" />

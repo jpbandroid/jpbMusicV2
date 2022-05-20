@@ -136,6 +136,9 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
+    configurations {
+        all*.exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
 }
 
 dependencies {
@@ -144,7 +147,7 @@ dependencies {
 
 
     // see https://developer.android.com/jetpack/androidx/releases/appcompat
-    implementation "androidx.appcompat:appcompat:1.4.1"
+
 
     // see https://developer.android.com/jetpack/androidx/releases/cardview
     implementation "androidx.cardview:cardview:1.0.0"
@@ -168,6 +171,7 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
     implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation 'androidx.databinding:viewbinding:7.2.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
@@ -191,5 +195,6 @@ dependencies {
     // see https://github.com/mikepenz/AboutLibraries/releases
     implementation "com.mikepenz:aboutlibraries-core:10.0.1"
     implementation "com.mikepenz:aboutlibraries-compose:10.0.1"
+    implementation 'dev.rikka.rikkax.material:material:2.2.0'
 
 }

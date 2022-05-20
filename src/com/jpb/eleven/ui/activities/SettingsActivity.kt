@@ -18,33 +18,32 @@
  */
 package com.jpb.eleven.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import org.lineageos.eleven.R
-import android.view.MenuItem
-import android.content.ServiceConnection
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener
-import com.jpb.eleven.utils.MusicUtils.ServiceToken
-import android.os.Build
-import com.jpb.eleven.utils.PreferenceUtils
-import android.content.DialogInterface
-import com.jpb.eleven.cache.ImageFetcher
-import com.jpb.eleven.utils.MusicUtils
-import android.content.ComponentName
-import android.os.IBinder
-import android.content.SharedPreferences
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.ComponentName
+import android.content.DialogInterface
+import android.content.ServiceConnection
+import android.content.SharedPreferences
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener
+import android.os.Build
+import android.os.Bundle
+import android.os.IBinder
 import android.os.RemoteException
 import android.text.TextUtils
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.text.HtmlCompat
 import androidx.preference.*
 import com.jpb.eleven.*
-import rikka.material.app.DayNightDelegate
+import com.jpb.eleven.cache.ImageFetcher
+import com.jpb.eleven.utils.MusicUtils
+import com.jpb.eleven.utils.MusicUtils.ServiceToken
+import com.jpb.eleven.utils.PreferenceUtils
+import org.lineageos.eleven.R
 import rikka.material.app.LocaleDelegate
 import java.util.*
-import java.util.prefs.PreferenceChangeEvent
+
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -105,13 +104,26 @@ class SettingsActivity : AppCompatActivity() {
                     true
                 }
             findPreference<ListPreference>(Constants.PREF_DARK_MODE)?.apply {
-                setOnPreferenceChangeListener { _, newValue ->
-                    GlobalValues.darkMode = newValue.toString()
-                    DayNightDelegate.setDefaultNightMode(AppUtils.getNightMode(newValue.toString()))
-                    activity?.recreate()
-                    true
-                }
-            }
+                this.setOnPreferenceChangeListener(
+                    object : Preference.OnPreferenceChangeListener {
+                        override fun onPreferenceChange(
+                            preference: Preference,
+                            newValue: Any?
+                        ): Boolean {
+                            val themeOption = newValue as String?
+                            if (themeOption != null) {
+                                ThemeHelper.applyTheme(themeOption)
+                            }
+                            return true
+                        }
+
+
+                    })
+
+
+
+
+
             val languagePreference =
                 (findPreference<ListPreference>(Constants.PREF_LOCALE))?.apply {
                     setOnPreferenceChangeListener { _, newValue ->
@@ -166,7 +178,7 @@ class SettingsActivity : AppCompatActivity() {
             } else if (index != -1) {
                 val name = localeNameUser[index - 1]
                 languagePreference.summary = name
-            }
+            }}
             PreferenceUtils.getInstance(context).setOnSharedPreferenceChangeListener(this)
         }
 
