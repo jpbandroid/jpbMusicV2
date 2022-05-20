@@ -12,7 +12,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.1.2'
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
-        classpath "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:10.0.1"
+        classpath "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:10.2.0"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -175,7 +175,7 @@ dependencies {
     // Material Design - https://material.io/ and https://m3.material.io/
 
     // see https://github.com/material-components/material-components-android/releases
-    implementation "com.google.android.material:material:1.5.0"
+    implementation "com.google.android.material:material:1.6.0"
 
     // Third-party libs
 
@@ -186,13 +186,13 @@ dependencies {
     implementation "com.github.javiersantos:AppUpdater:2.7"
 
     // see https://github.com/PureWriter/about-page/releases
-    implementation 'com.drakeet.about:about:2.5.0'
+    implementation 'com.drakeet.about:about:2.5.1'
     implementation 'com.drakeet.multitype:multitype:4.3.0'
 
     // see https://github.com/mikepenz/AboutLibraries/releases
-    implementation "com.mikepenz:aboutlibraries-core:10.0.1"
-    implementation "com.mikepenz:aboutlibraries-compose:10.0.1"
-    implementation 'dev.rikka.rikkax.material:material:2.2.0'
+    implementation "com.mikepenz:aboutlibraries-core:10.2.0"
+    implementation "com.mikepenz:aboutlibraries-compose:10.2.0"
+
     // see https://github.com/jpbandroid/appcompat
     implementation 'com.github.jpbandroid:appcompat:1.0.1'
 }
