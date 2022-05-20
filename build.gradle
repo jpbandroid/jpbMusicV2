@@ -10,9 +10,9 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:7.2.0'
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
-        classpath "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:10.0.0"
+        classpath "com.mikepenz.aboutlibraries.plugin:aboutlibraries-plugin:10.2.0"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -55,8 +55,8 @@ android {
         minSdkVersion 28
         targetSdkVersion 32
 
-        versionCode 410
-        versionName '4.1.0'
+        versionCode 420
+        versionName '4.2.0'
 
         vectorDrawables {
             useSupportLibrary true
@@ -144,7 +144,7 @@ dependencies {
 
 
     // see https://developer.android.com/jetpack/androidx/releases/appcompat
-    implementation "androidx.appcompat:appcompat:1.4.1"
+    implementation 'androidx.appcompat:appcompat:1.4.1'
 
     // see https://developer.android.com/jetpack/androidx/releases/cardview
     implementation "androidx.cardview:cardview:1.0.0"
@@ -168,13 +168,14 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
     implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation 'androidx.databinding:viewbinding:7.2.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
     // Material Design - https://material.io/ and https://m3.material.io/
 
     // see https://github.com/material-components/material-components-android/releases
-    implementation "com.google.android.material:material:1.5.0"
+    implementation "com.google.android.material:material:1.6.0"
 
     // Third-party libs
 
@@ -185,11 +186,13 @@ dependencies {
     implementation "com.github.javiersantos:AppUpdater:2.7"
 
     // see https://github.com/PureWriter/about-page/releases
-    implementation 'com.drakeet.about:about:2.5.0'
+    implementation 'com.drakeet.about:about:2.5.1'
     implementation 'com.drakeet.multitype:multitype:4.3.0'
 
     // see https://github.com/mikepenz/AboutLibraries/releases
-    implementation "com.mikepenz:aboutlibraries-core:10.0.0"
-    implementation "com.mikepenz:aboutlibraries-compose:10.0.0"
+    implementation "com.mikepenz:aboutlibraries-core:10.2.0"
+    implementation "com.mikepenz:aboutlibraries-compose:10.2.0"
 
+    // see https://github.com/jpbandroid/appcompat
+    implementation 'com.github.jpbandroid:appcompat:1.0.1'
 }

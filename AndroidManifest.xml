@@ -17,7 +17,8 @@
     -->
     <!-- suppress AndroidElementNotAllowed -->
     <!-- Used for caching and creating new playlists -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Used to check for a network connection -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" /> <!-- Used to check for a network connection -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Used to keep the service running when the phone sleeps -->
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- The main service uses a sticky broadcast -->
     <uses-permission android:name="android.permission.BROADCAST_STICKY" /> <!-- Lower or raise the music based on the phone state -->

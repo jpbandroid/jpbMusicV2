@@ -18,6 +18,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">Music</string>
+    <string name="array_dark_mode_off">Off</string>
+    <string name="array_dark_mode_on">On</string>
+    <string name="array_dark_mode_auto">Auto</string>
+    <string name="array_dark_mode_system">System Default</string>
+    <string name="array_dark_mode_battery">Set by Battery Saver</string>
 
     <!-- Page titles -->
     <string name="page_artists">Artists</string>
@@ -171,4 +176,5 @@
 
     <string name="channel_music">Music playback</string>
     <string name="title_activity_osslicense">OSSLicense</string>
+    <string name="md3notavailable">Not available yet!</string>
 </resources>
