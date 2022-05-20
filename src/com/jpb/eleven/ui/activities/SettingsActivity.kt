@@ -3,6 +3,7 @@
  * Copyright (C) 2014 The CyanogenMod Project
  * Copyright (C) 2018-2021 The LineageOS Project
  * Copyright (C) 2019 SHIFT GmbH
+ * Copyright (C) 2022 jpb
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,13 +36,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.text.HtmlCompat
 import androidx.preference.*
+import com.jpb.appcompat.darkmode.ThemeHelper
+import com.jpb.appcompat.locale.LocaleDelegate
 import com.jpb.eleven.*
 import com.jpb.eleven.cache.ImageFetcher
 import com.jpb.eleven.utils.MusicUtils
 import com.jpb.eleven.utils.MusicUtils.ServiceToken
 import com.jpb.eleven.utils.PreferenceUtils
 import org.lineageos.eleven.R
-import rikka.material.app.LocaleDelegate
 import java.util.*
 
 

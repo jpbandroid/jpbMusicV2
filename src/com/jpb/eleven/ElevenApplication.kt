@@ -23,7 +23,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 import com.google.android.material.color.DynamicColors
-import com.jpb.eleven.ThemeHelper.applyTheme
+import com.jpb.appcompat.darkmode.ThemeHelper.applyTheme
 import com.jpb.eleven.cache.ImageCache
 import rikka.material.app.DayNightDelegate
 import rikka.material.app.LocaleDelegate

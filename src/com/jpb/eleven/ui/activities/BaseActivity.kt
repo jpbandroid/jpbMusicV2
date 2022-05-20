@@ -57,6 +57,8 @@ import android.util.TypedValue
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.jpb.appcompat.ExtendedAppCompatActivity
+import com.jpb.appcompat.locale.LocaleDelegate
 import com.jpb.eleven.GlobalValues
 import com.jpb.eleven.utils.NavUtils
 import java.lang.UnsupportedOperationException
@@ -70,7 +72,7 @@ import java.lang.UnsupportedOperationException
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-abstract class BaseActivity : AppCompatActivity(), ServiceConnection, MusicStateListener,
+abstract class BaseActivity : ExtendedAppCompatActivity(), ServiceConnection, MusicStateListener,
     ICacheListener {
     /**
      * Play-state and meta change listener
