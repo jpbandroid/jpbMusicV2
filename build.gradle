@@ -55,8 +55,8 @@ android {
         minSdkVersion 28
         targetSdkVersion 32
 
-        versionCode 410
-        versionName '4.1.0'
+        versionCode 420
+        versionName '4.2.0'
 
         vectorDrawables {
             useSupportLibrary true
@@ -144,7 +144,7 @@ dependencies {
 
 
     // see https://developer.android.com/jetpack/androidx/releases/appcompat
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
 
     // see https://developer.android.com/jetpack/androidx/releases/cardview
     implementation "androidx.cardview:cardview:1.0.0"
