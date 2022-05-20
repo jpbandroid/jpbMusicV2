@@ -136,4 +136,6 @@
     <string name="header_other">"Khác"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Điều khiển nhạc</string>
+    <string name="md3notavailable">Chưa xuất hiện!</string>
+    <string name="md3notavailable">Chưa xuất hiện!</string>
 </resources>

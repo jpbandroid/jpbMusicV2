@@ -135,4 +135,6 @@
     <string name="header_5_plus_albums">5+ albumai</string>
     <string name="header_other">"Kita"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="md3notavailable">Kol kas nepasiekiamas!</string>
+    <string name="md3notavailable">Kol kas nepasiekiamas!</string>
 </resources>

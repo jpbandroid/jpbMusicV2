@@ -176,4 +176,5 @@
 
     <string name="channel_music">Music playback</string>
     <string name="title_activity_osslicense">OSSLicense</string>
+    <string name="md3notavailable">Not available yet!</string>
 </resources>

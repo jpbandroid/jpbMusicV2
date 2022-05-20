@@ -62,7 +62,9 @@
         <SwitchPreferenceCompat
             android:defaultValue="false"
             android:key="md3"
-            android:title="Material Design 3" />
+            android:summary="@string/md3notavailable"
+            android:title="Material Design 3"
+            app:summary="@string/md3notavailable" />
         <ListPreference
             app:defaultValue="SYSTEM"
             app:entries="@array/language"

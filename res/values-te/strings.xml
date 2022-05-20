@@ -135,4 +135,5 @@
     <string name="header_5_plus_albums">5+ ఆల్బములు</string>
     <string name="header_other">""ఇతర""</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="md3notavailable">ప్రస్తుతానికి అందుబాటులో లేదు!</string>
 </resources>
