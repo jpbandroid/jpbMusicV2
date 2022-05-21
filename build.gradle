@@ -136,6 +136,9 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
+    configurations {
+        all*.exclude group: 'androidx.appcompat', module: 'appcompat'
+    }
 }
 
 dependencies {
@@ -144,7 +147,6 @@ dependencies {
 
 
     // see https://developer.android.com/jetpack/androidx/releases/appcompat
-    implementation 'androidx.appcompat:appcompat:1.4.1'
 
     // see https://developer.android.com/jetpack/androidx/releases/cardview
     implementation "androidx.cardview:cardview:1.0.0"
@@ -181,6 +183,7 @@ dependencies {
 
     implementation "com.google.accompanist:accompanist-insets-ui:0.23.1"
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.23.1"
+    implementation 'dev.rikka.rikkax.material:material:2.2.0'
 
     // see https://github.com/javiersantos/AppUpdater/releases
     implementation "com.github.javiersantos:AppUpdater:2.7"
