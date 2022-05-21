@@ -132,5 +132,4 @@
     <string name="header_other">"Cits"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="md3notavailable">Vēl nav pieejams!</string>
-    <string name="md3notavailable">Vēl nav pieejams!</string>
 </resources>

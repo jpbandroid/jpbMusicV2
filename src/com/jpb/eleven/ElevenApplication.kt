@@ -32,9 +32,6 @@ import rikka.material.app.LocaleDelegate
 class ElevenApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        if (GlobalValues.md3Theme) {
-            DynamicColors.applyToActivitiesIfAvailable(this)
-        }
     }
 
     override fun onLowMemory() {
