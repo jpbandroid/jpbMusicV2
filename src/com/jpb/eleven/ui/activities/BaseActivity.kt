@@ -142,12 +142,6 @@ abstract class BaseActivity : ExtendedAppCompatActivity(), ServiceConnection, Mu
             )
         }
 
-        if (GlobalValues.md3Theme) {
-            theme.applyStyle(R.style.Theme_MD3, true)
-        }
-        if (GlobalValues.rengeTheme) {
-            theme.applyStyle(R.style.Theme_Renge, true)
-        }
 
         // Set the layout
         setContentView(setContentView())
