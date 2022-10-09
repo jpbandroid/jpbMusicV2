@@ -68,10 +68,10 @@
         <ListPreference
             app:defaultValue="SYSTEM"
             app:entries="@array/language"
-            app:entryValues="@array/language_value"
             app:key="locale"
             app:summary="%s"
-            app:title="Pick language" />
+            app:title="Pick language"
+            app:entryValues="@array/locales"/>
         <ListPreference
             app:defaultValue="system"
             app:entries="@array/list_dark_mode"

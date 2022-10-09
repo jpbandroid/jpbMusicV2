@@ -26,28 +26,78 @@ import android.content.DialogInterface
 import android.content.ServiceConnection
 import android.content.SharedPreferences
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.os.RemoteException
-import android.text.TextUtils
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.text.HtmlCompat
-import androidx.preference.*
+import androidx.preference.ListPreference
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
+import com.jpb.appcompat.ExtendedAppCompatActivity
 import com.jpb.appcompat.darkmode.ThemeHelper
-import com.jpb.appcompat.locale.LocaleDelegate
-import com.jpb.eleven.*
+import com.jpb.eleven.Constants
+import com.jpb.eleven.IElevenService
 import com.jpb.eleven.cache.ImageFetcher
 import com.jpb.eleven.utils.MusicUtils
 import com.jpb.eleven.utils.MusicUtils.ServiceToken
 import com.jpb.eleven.utils.PreferenceUtils
 import org.lineageos.eleven.R
+import rikka.core.util.ContextUtils.requireActivity
 import java.util.*
 
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : ExtendedAppCompatActivity() {
+    private val prefs: SharedPreferences? = null
+    fun createLocaleConfiguration(language: String): Configuration {
+        val config = Configuration()
+        if (language.contains("_")) {
+            val parts = language.split("_").toTypedArray()
+            val locale = Locale(parts[0], parts[1])
+            Locale.setDefault(locale)
+            config.locale = locale
+        }
+        return config
+    }
+
+    fun getCountryName(name: String): String {
+        for (locale in Locale.getAvailableLocales()) {
+            if (name == locale.language + '_' + locale.country) {
+                val language = locale.getDisplayName(locale)
+                return language.substring(0, 1).uppercase(Locale.getDefault()) + language.substring(
+                    1
+                )
+            }
+        }
+        return name
+    }
+
+    private fun onLanguageUpdated(newValue: String): Boolean {
+        this.prefs!!.edit().putString("language", newValue).apply()
+        val config: Configuration = if (newValue == "System Default") {
+            this.createLocaleConfiguration(Resources.getSystem().configuration.locale.toString())
+        } else {
+            this.createLocaleConfiguration(newValue)
+        }
+        val resources = requireActivity<Activity>(this).baseContext.resources
+        resources!!.updateConfiguration(config, resources.displayMetrics)
+        requireActivity<Activity>(this).recreate()
+        return true
+    }
+
+    private fun populateLanguages(languages: ListPreference) {
+        val locales = resources.getStringArray(R.array.locales)
+        val language = ArrayList<String>()
+        for (locale in locales) {
+            language.add(this.getCountryName(locale))
+        }
+        val languageValue = language.toTypedArray()
+        languages.entries = languageValue
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
@@ -98,13 +148,6 @@ class SettingsActivity : AppCompatActivity() {
                         true
                     }
             }
-            val md3pref = findPreference<SwitchPreferenceCompat>("md3")
-            md3pref?.onPreferenceChangeListener =
-                Preference.OnPreferenceChangeListener { _, newValue ->
-                    GlobalValues.md3Theme = newValue as Boolean
-                    activity?.recreate()
-                    true
-                }
             findPreference<ListPreference>(Constants.PREF_DARK_MODE)?.apply {
                 this.setOnPreferenceChangeListener(
                     object : Preference.OnPreferenceChangeListener {
@@ -126,63 +169,12 @@ class SettingsActivity : AppCompatActivity() {
 
 
 
-            val languagePreference =
-                (findPreference<ListPreference>(Constants.PREF_LOCALE))?.apply {
+            val languages =
+                (findPreference<ListPreference>("locale"))?.apply {
                     setOnPreferenceChangeListener { _, newValue ->
-                        if (newValue is String) {
-                            val locale: Locale = if ("SYSTEM" == newValue) {
-                                LocaleDelegate.systemLocale
-                            } else {
-                                Locale.forLanguageTag(newValue)
-                            }
-                            LocaleDelegate.defaultLocale = locale
-                            activity?.recreate()
-                        }
+                        (newValue as String?)?.let { SettingsActivity().onLanguageUpdated(it) }
                         true
-                    }
-                }!!
-            val tag = languagePreference.value
-            val index = listOf(*languagePreference.entryValues).indexOf(tag)
-            val localeName: MutableList<String> = ArrayList()
-            val localeNameUser: MutableList<String> = ArrayList()
-            val userLocale = GlobalValues.locale
-            for (i in 1 until languagePreference.entries.size) {
-                val locale = Locale.forLanguageTag(languagePreference.entries[i].toString())
-                localeName.add(
-                    if (!TextUtils.isEmpty(locale.script)) locale.getDisplayScript(locale) else locale.getDisplayName(
-                        locale
-                    )
-                )
-                localeNameUser.add(
-                    if (!TextUtils.isEmpty(locale.script)) locale.getDisplayScript(
-                        userLocale
-                    ) else locale.getDisplayName(userLocale)
-                )
-            }
-
-            for (i in 1 until languagePreference.entries.size) {
-                if (index != i) {
-                    languagePreference.entries[i] = HtmlCompat.fromHtml(
-                        String.format(
-                            "%s - %s",
-                            localeName[i - 1],
-                            localeNameUser[i - 1]
-                        ),
-                        HtmlCompat.FROM_HTML_MODE_LEGACY
-                    )
-                } else {
-                    languagePreference.entries[i] = localeNameUser[i - 1]
-                }
-            }
-
-            if (TextUtils.isEmpty(tag) || "SYSTEM" == tag) {
-                languagePreference.summary = getString(rikka.core.R.string.follow_system)
-            } else if (index != -1) {
-                val name = localeNameUser[index - 1]
-                languagePreference.summary = name
-            }}
-            PreferenceUtils.getInstance(context).setOnSharedPreferenceChangeListener(this)
-        }
+        }}}}
 
         override fun onDestroy() {
             PreferenceUtils.getInstance(context).removeOnSharedPreferenceChangeListener(this)
@@ -246,6 +238,5 @@ class SettingsActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 }

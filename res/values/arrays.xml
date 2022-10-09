@@ -27,11 +27,76 @@
 
     <string-array name="language" translatable="false">
         <item>@string/follow_system</item>
-        <item>en</item>
-        <item>zh-Hans</item>
-        <item>zh-Hant</item>
+        <item>af</item>
+        <item>ar</item>
+        <item>as</item>
+        <item>ast_ES</item>
+        <item>az</item>
+        <item>be</item>
+        <item>bg</item>
+        <item>ca</item>
+        <item>cs</item>
+        <item>cy</item>
+        <item>da</item>
+        <item>de</item>
+        <item>el</item>
+        <item>en_GB</item>
+        <item>en_AU</item>
+        <item>en_CA</item>
+        <item>en_IN</item>
+        <item>eo</item>
+        <item>es</item>
+        <item>es_US</item>
+        <item>et</item>
+        <item>eu</item>
+        <item>fa</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>fy_NL</item>
+        <item>gd</item>
+        <item>gl</item>
+        <item>gu</item>
+        <item>hi</item>
+        <item>hr</item>
+        <item>hu</item>
+        <item>in</item>
+        <item>is</item>
+        <item>it</item>
+        <item>iw</item>
+        <item>ja</item>
+        <item>ka</item>
+        <item>kn</item>
+        <item>ko</item>
+        <item>ku</item>
+        <item>lb</item>
+        <item>lt</item>
+        <item>lv</item>
+        <item>ml</item>
+        <item>mr</item>
+        <item>nb</item>
+        <item>nl</item>
+        <item>or</item>
+        <item>pl</item>
+        <item>pt_BR</item>
+        <item>pt_PT</item>
+        <item>ro</item>
         <item>ru</item>
+        <item>sc_IT</item>
+        <item>sk</item>
+        <item>sl</item>
+        <item>sq</item>
+        <item>sr</item>
+        <item>sv</item>
+        <item>ta</item>
+        <item>te</item>
+        <item>th</item>
+        <item>tr</item>
+        <item>ug</item>
         <item>uk</item>
+        <item>vi</item>
+        <item>zh-Hans</item>
+        <item>zh-HK</item>
+        <item>zh-Hant</item>
     </string-array>
 
     <string-array name="language_value" translatable="false">
