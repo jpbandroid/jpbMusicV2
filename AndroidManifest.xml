@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="org.lineageos.eleven"
-    android:versionCode="401"
-    android:versionName="4.0.1"
+    android:versionCode="420"
+    android:versionName="4.2.0"
     tools:ignore="GradleOverrides">
 
     <uses-sdk
@@ -17,7 +17,8 @@
     -->
     <!-- suppress AndroidElementNotAllowed -->
     <!-- Used for caching and creating new playlists -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" /> <!-- Used to check for a network connection -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Used to keep the service running when the phone sleeps -->
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- The main service uses a sticky broadcast -->
@@ -39,7 +40,7 @@
         android:label="@string/app_name"
         android:largeHeap="@bool/config_largeHeap"
         android:requestLegacyExternalStorage="true"
-        android:taskAffinity="org.lineageos.eleven.task"
+        android:taskAffinity="com.jpb.eleven.task"
         android:theme="@style/Eleven.Theme"
         tools:ignore="AllowBackup">
         <activity
@@ -78,7 +79,7 @@
                 <data android:mimeType="vnd.android.cursor.dir/artists" />
             </intent-filter>
             <intent-filter>
-                <action android:name="org.lineageos.eleven.AUDIO_PLAYER" />
+                <action android:name="com.jpb.eleven.AUDIO_PLAYER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

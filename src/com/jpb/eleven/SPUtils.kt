@@ -2,11 +2,12 @@ package com.jpb.eleven
 
 import android.content.Context
 import android.content.SharedPreferences
+import rikka.material.app.DayNightDelegate.getApplicationContext
 
 object SPUtils {
 
   val sp: SharedPreferences by lazy {
-    ElevenApplication.appContext!!.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE)
+    getApplicationContext().getSharedPreferences("org.lineageos.eleven_preferences", Context.MODE_PRIVATE)
   }
 
   fun <T> getValue(name: String, default: T): T = with(sp) {
