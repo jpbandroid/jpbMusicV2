@@ -17,9 +17,9 @@ import org.lineageos.eleven.BuildConfig
 class AboutActivity : AbsAboutActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreateHeader(
-        @NonNull icon: ImageView,
-        @NonNull slogan: TextView,
-        @NonNull version: TextView
+        icon: ImageView,
+        slogan: TextView,
+        version: TextView
     ) {
         icon.setImageResource(R.mipmap.ic_launcher)
         slogan.text = "jpb Music v2 (Eleven)"
@@ -29,9 +29,9 @@ class AboutActivity : AbsAboutActivity() {
         setHeaderContentScrim(R.color.accent)
     }
 
-    override fun onItemsCreated(@NonNull items: MutableList<Any>) {
+    override fun onItemsCreated(items: MutableList<Any>) {
         items.add(Category("About app"))
-        items.add(Card("jpb Music\nFOSS music player for Android based on LineageOS' Eleven music player\nEleven source: https://github.com/LineageOS/android_packages_apps_Eleven/tree/lineage-19.1"))
+        items.add(Card("jpb Music\nFOSS music player for Android based on LineageOS' Eleven music player\nEleven source: https://github.com/LineageOS/android_packages_apps_Eleven/tree/lineage-19.1\njpb Music source: https://github.com/jpbandroid/jpbMusicV2"))
         items.add(Category("Developers"))
         items.add(
             Contributor(
