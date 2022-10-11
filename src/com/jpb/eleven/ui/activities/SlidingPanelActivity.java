@@ -294,7 +294,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 
     @Override
     public void onCacheResumed() {
-        super.onCacheResumed();
 
         updateScrimImage();
     }

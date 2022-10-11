@@ -311,6 +311,8 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         mAlbumArt.setOnClickListener(mOpenCurrentAlbumProfile);
     }
 
+    public abstract int setContentView();
+
     protected void clearMetaInfo() {
         mAlbumArt.setImageResource(R.drawable.default_artwork);
     }
@@ -347,6 +349,8 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
             MusicUtils.shuffleAll(BaseActivity.this);
         }
     };
+
+    public abstract void onCacheResumed();
 
     /**
      * Used to monitor the state of playback
