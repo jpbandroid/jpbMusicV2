@@ -42,7 +42,7 @@ apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
@@ -50,13 +50,13 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.lineageos.eleven"
+        applicationId "com.jpb.eleven"
 
         minSdkVersion 28
-        targetSdkVersion 32
+        targetSdkVersion 33
 
-        versionCode 430
-        versionName '4.3.0'
+        versionCode 500
+        versionName '5.0.0'
 
         vectorDrawables {
             useSupportLibrary true
