@@ -42,7 +42,7 @@ apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
