@@ -62,7 +62,7 @@
         <Preference
             android:icon="@mipmap/ic_launcher"
             android:key="aboutver"
-            android:summary="version 4.4.0\nBuilt 11 October 2022"
+            android:summary="version 4.4.0\nBuilt 16 October 2022"
             android:title="jpb Music (Eleven)" />
     </PreferenceCategory>
 </PreferenceScreen>
